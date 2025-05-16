@@ -1,0 +1,184 @@
+:root {
+  --bg: #222831;
+  --nav: #393e46;
+  --primary: #eeeeee;
+  --second: #00adb5;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  color: var(--primary);
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--bg);
+  margin: 0;
+  padding: 0;
+  padding-top: 60px;
+}
+
+main {
+  padding: 20px;
+
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+  padding: 1.4rem 7%;
+  background-color: var(--nav);
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--second);
+}
+
+.navbar .navbar-title {
+  color: var(--primary);
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0.1rem;
+}
+
+.navbar .navbar-list a {
+  color: var(--primary);
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0.1rem;
+}
+
+.navbar .navbar-list a:hover {
+  color: var(--second);
+}
+
+.navbar .navbar-list a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--second);
+  transform: scaleX(0);
+  transition: 0.1s linear;
+}
+
+.navbar .navbar-list a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.home,
+.python,
+.javascript,
+.java,
+.aside-bar {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: var(--primary);
+  font-size: 1.3rem;
+  padding: 20px;
+}
+
+.aside-bar img {
+  max-width: 200px;
+  height: 200px;
+}
+
+footer {
+  padding: 20px;
+  color: var(--primary);
+  background-color: var(--nav);
+  text-align: center;
+  font-weight: bold;
+}
+
+/*Media Queries*/
+
+/*Laptop*/
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+
+  main {
+    flex-flow: column nowrap;
+  }
+
+  main aside {
+    align-self: center;
+  }
+}
+/*Tablet*/
+@media (max-width: 747px) {
+  html {
+    font-size: 60%;
+  }
+
+  .navbar .navbar-list {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--second);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-list a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-list a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-list a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .python img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .python {
+    padding: 0;
+  }
+
+  .python h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .python p {
+    font-size: 1.6rem;
+  }
+
+  .aside {
+    align-self: stretch;
+  }
+}
+/*Mobile*/
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
